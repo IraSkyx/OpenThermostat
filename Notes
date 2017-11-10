@@ -1,0 +1,25 @@
+						Projet tuteuré
+
+2 Parties : 
+- Etude code existant -> Modèle -> Analyse modèle.
+	-> patrons + lesquels utiliser ? (IOT) (!!PAS DE CHIFFRAGE!!)
+	   Pour : Authentification, application, web, modules (capteurs 1 SEULE CLASSE). 
+
+- Sécurité (Application firewall)
+	-> Outils de sécurité -> failles (penetration testing)
+	-> patrons de sécurité -> Analyser ceux qui doivent être mis en place. (Inputguard, putguard)
+
+
+
+TODO : Application générique, garder une plateforme générique compilable. (Virer thermosta).
+	   Réduire mémoire dispo. Eviter de faire grossir le sketch.
+	   Cahier des charges + planning 
+	   	Intro
+	   	Historique 
+	   	Objectifs
+	   	Final projet (framework ou outil mieux sécurisé)
+	   	Contraintes délai, GANT, ressources (matériel), annexes (code etc).
+
+	   Mails : Noms + qu'est ce qu'on a fait + qu'est ce qu'on va faire.
+	   Carte : ESP8266
+	   RedMine : plateforme de planning et de dépôt.                  
