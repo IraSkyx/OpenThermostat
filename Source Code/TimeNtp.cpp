@@ -44,42 +44,42 @@ time_t TimeNtp::globalGetNTPTime()
 time_t TimeNtp::getNtpTime() 
 { 
   time_t temp;
-IPAddress ntpServerIP; // NTP server's ip address 
-while (Udp.parsePacket() > 0) ; // discard any previously received packets 
-DEBUG_PRINTLN(F("Transmit NTP Request"));
- //lconfig->AddLog("Transmit NTP Request");
- // get a random server from the pool 
-char charBuf[30];
-ntpServerName.toCharArray(charBuf, 30); 
-WiFi.hostByName(charBuf, ntpServerIP); 
- DEBUG_PRINT(ntpServerName);
+  IPAddress ntpServerIP; // NTP server's ip address 
+  while (Udp.parsePacket() > 0) ; // discard any previously received packets 
+  DEBUG_PRINTLN(F("Transmit NTP Request"));
+  //lconfig->AddLog("Transmit NTP Request");
+  // get a random server from the pool 
+  char charBuf[30];
+  ntpServerName.toCharArray(charBuf, 30); 
+  WiFi.hostByName(charBuf, ntpServerIP); 
+  DEBUG_PRINT(ntpServerName);
   DEBUG_PRINT(F(": ")); 
-   DEBUG_PRINTLN(ntpServerIP); 
- sendNTPpacket(ntpServerIP); 
- uint32_t beginWait = millis(); 
- while (millis() - beginWait < 7000) { 
- int size = Udp.parsePacket(); 
- if (size >= NTP_PACKET_SIZE) { 
-  DEBUG_PRINTLN(F("Receive NTP Response"));
-       Udp.read(packetBuffer, NTP_PACKET_SIZE);  // read packet into the buffer 
-       unsigned long secsSince1900; 
-       // convert four bytes starting at location 40 to a long integer 
-       secsSince1900 =  (unsigned long)packetBuffer[40] << 24; 
-       secsSince1900 |= (unsigned long)packetBuffer[41] << 16; 
-       secsSince1900 |= (unsigned long)packetBuffer[42] << 8; 
-       secsSince1900 |= (unsigned long)packetBuffer[43]; 
-     tempo=3600;
-     gotTime=true;
-     setSyncInterval(tempo); 
-     temp=secsSince1900 - 2208988800UL + timeZone * SECS_PER_HOUR; 
-     if (summertime(year(temp), month(temp), day(temp), hour(temp), timeZone))
-temp+=SECS_PER_HOUR;
-return temp;
-     } 
-   } 
-   DEBUG_PRINTLN(F("No NTP Response :-("));
-   //lconfig->AddLog("No NTP Response :-(");
-   return 0; // return 0 if unable to get the time 
+  DEBUG_PRINTLN(ntpServerIP); 
+  sendNTPpacket(ntpServerIP); 
+  uint32_t beginWait = millis(); 
+  while (millis() - beginWait < 7000) { 
+    int size = Udp.parsePacket(); 
+    if (size >= NTP_PACKET_SIZE) { 
+      DEBUG_PRINTLN(F("Receive NTP Response"));
+      Udp.read(packetBuffer, NTP_PACKET_SIZE);  // read packet into the buffer 
+      unsigned long secsSince1900; 
+      // convert four bytes starting at location 40 to a long integer 
+      secsSince1900 =  (unsigned long)packetBuffer[40] << 24; 
+      secsSince1900 |= (unsigned long)packetBuffer[41] << 16; 
+      secsSince1900 |= (unsigned long)packetBuffer[42] << 8; 
+      secsSince1900 |= (unsigned long)packetBuffer[43]; 
+      tempo=3600;
+      gotTime=true;
+      setSyncInterval(tempo); 
+      temp=secsSince1900 - 2208988800UL + timeZone * SECS_PER_HOUR; 
+      if (summertime(year(temp), month(temp), day(temp), hour(temp), timeZone))
+      temp+=SECS_PER_HOUR;
+      return temp;
+    } 
+  } 
+  DEBUG_PRINTLN(F("No NTP Response :-("));
+  //lconfig->AddLog("No NTP Response :-(");
+  return 0; // return 0 if unable to get the time 
  } 
 
 // send an NTP request to the time server at the given address 
