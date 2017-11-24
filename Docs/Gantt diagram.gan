@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="OpenThermostat" company="" webLink="http://" view-date="2017-11-04" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="OpenThermostat" company="" webLink="http://" view-date="2017-06-01" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="fr_FR">
     <description/>
-    <view zooming-state="default:3" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="167" order="0"/>
-        <field id="tpd4" name="Date de début" width="65" order="1"/>
-        <field id="tpd5" name="Date de fin" width="64" order="2"/>
+    <view zooming-state="default:9" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="158" order="0"/>
+        <field id="tpd4" name="Date de début" width="62" order="1"/>
+        <field id="tpd5" name="Date de fin" width="61" order="2"/>
         <option id="taskLabelUp" value="name"/>
         <option id="taskLabelDown" value="resources"/>
-        <option id="taskLabelLeft" value=""/>
-        <timeline><![CDATA[0,2,32,21]]></timeline>
-        <option id="color.recent"><![CDATA[#cccccc #ff3333 #ffcc66 #00cc66 #9999ff #333333]]></option>
+        <timeline><![CDATA[2,21,0,32]]></timeline>
+        <option id="color.recent"><![CDATA[#9999ff #e1e1e1 #333333 #cccccc #00cc66 #ff3333 #ffcc66]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -27,6 +26,21 @@
         <date year="" month="11" date="13" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
         <date year="" month="11" date="20" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
         <date year="" month="11" date="27" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="4" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="11" date="6" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="11" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="18" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="25" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="1" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="8" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="15" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="22" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="29" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="5" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="12" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="19" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="26" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="3" date="5" type="WORKING_DAY" color="#9999ff"/>
     </calendars>
     <tasks empty-milestones="true">
         <taskproperties>
@@ -151,12 +165,52 @@ Etapes :
             <depend id="63" type="2" difference="0" hardness="Strong"/>
             <depend id="65" type="2" difference="0" hardness="Strong"/>
             <depend id="69" type="2" difference="0" hardness="Strong"/>
+            <depend id="79" type="2" difference="0" hardness="Strong"/>
+            <depend id="90" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="53" name="Analyse du patron X" color="#8cb6ce" meeting="false" start="2017-11-29" duration="5" complete="0" expand="true"/>
-        <task id="65" name="Pen Testing John The Ripper" color="#ffcc66" meeting="false" start="2017-11-29" duration="5" complete="0" expand="true"/>
-        <task id="56" name="Analyse du patron X" color="#ff3333" meeting="false" start="2017-11-29" duration="5" complete="0" expand="true"/>
-        <task id="63" name="Pen Testing ZapProxy" color="#00cc66" meeting="false" start="2017-11-29" duration="5" complete="0" expand="true"/>
-        <task id="69" name="Pen Testing hardsploit" color="#cccccc" meeting="false" start="2017-11-29" duration="5" complete="0" expand="true"/>
+        <task id="53" name="Analyse de patrons de conception" color="#8cb6ce" meeting="false" start="2017-11-29" duration="90" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="79" name="Implémentation de patrons de conception" color="#8cb6ce" meeting="false" start="2017-11-29" duration="90" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="65" name="Utilisation d'outils de Pen Testing (Ex : John The Ripper ...)" color="#ffcc66" meeting="false" start="2017-11-29" duration="14" complete="0" expand="true">
+            <depend id="78" type="2" difference="0" hardness="Strong"/>
+            <depend id="87" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="78" name="Analyse de patrons de sécurité" color="#ffcc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="87" name="Implémentation de patrons de sécurité" color="#ffcc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="56" name="Analyse de patrons de conception" color="#ff3333" meeting="false" start="2017-11-29" duration="90" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="90" name="Implémentation de patrons de conception" color="#ff3333" meeting="false" start="2017-11-29" duration="90" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="63" name="Utilisation d'outils de Pen Testing (Ex : Zaproxy ...)" color="#00cc66" meeting="false" start="2017-11-29" duration="14" complete="0" expand="true">
+            <depend id="94" type="2" difference="0" hardness="Strong"/>
+            <depend id="101" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="94" name="Analyse de patrons de sécurité" color="#00cc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="101" name="Implémentation de patrons de sécurité" color="#00cc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="69" name="Utilisation d'outils de Pen Testing (Ex : Hardsploit ...)" color="#cccccc" meeting="false" start="2017-11-29" duration="14" complete="0" expand="true">
+            <depend id="98" type="2" difference="0" hardness="Strong"/>
+            <depend id="104" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="98" name="Analyse de patrons de sécurité" color="#cccccc" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="104" name="Implémentation de patrons de sécurité" color="#cccccc" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="107" name="Finalisation du projet" color="#333333" meeting="false" start="2018-02-27" duration="7" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Gabin Salabert" function="2" contacts="" phone=""/>
@@ -172,25 +226,38 @@ Etapes :
         <allocation task-id="20" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="53" resource-id="0" function="2" responsible="true" load="100.0"/>
         <allocation task-id="74" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="79" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="0" function="2" responsible="true" load="100.0"/>
         <allocation task-id="6" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="21" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="34" resource-id="1" function="1" responsible="true" load="100.0"/>
         <allocation task-id="65" resource-id="1" function="1" responsible="true" load="100.0"/>
         <allocation task-id="74" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="78" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="87" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="1" function="1" responsible="false" load="100.0"/>
         <allocation task-id="21" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="38" resource-id="2" function="1" responsible="true" load="100.0"/>
         <allocation task-id="43" resource-id="2" function="1" responsible="true" load="100.0"/>
         <allocation task-id="69" resource-id="2" function="1" responsible="true" load="100.0"/>
         <allocation task-id="74" resource-id="2" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="98" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="104" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="2" function="1" responsible="false" load="100.0"/>
         <allocation task-id="21" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="32" resource-id="3" function="2" responsible="true" load="100.0"/>
         <allocation task-id="56" resource-id="3" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="90" resource-id="3" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="3" function="2" responsible="false" load="100.0"/>
         <allocation task-id="21" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="16" resource-id="4" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="42" resource-id="4" function="1" responsible="true" load="100.0"/>
         <allocation task-id="63" resource-id="4" function="1" responsible="true" load="100.0"/>
         <allocation task-id="74" resource-id="4" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="4" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="4" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="4" function="1" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
