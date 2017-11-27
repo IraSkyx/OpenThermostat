@@ -1,98 +1,118 @@
+/* Cette classe permet d'initialiser les capteurs DHT et Présence tout en controlant en permanence les données récupérées par la lecture.
+  Elle permet aussi d'avoir accès directement aux valeurs humidité et température.
+  Elle ajoute aussi le nombre de présence détectées aux logs et patiente entre chaque lecture. */
+
+
 #include "SensorManager.h"
 
+// Constructeur par défaut.
 SensorManager::SensorManager()
 {
-// Initialisation du capteur de tempÃ©rature DHT
+// Initialisation du capteur de température DHT
 lconfig=new Application();
 dht=new DHT(lconfig->dhtPin, DHT22);
 }
+
+// Constructeur à partir de 2 configurations existantes.
 SensorManager::SensorManager(Application *c, DomoticzBroadcaster * domo)
 {
 lconfig=c;
 ldomo=domo;
-// Initialisation du capteur de tempÃ©rature DHT
-//dht=new DHT(lconfig->dhtPin, DHT22);
 }
 
-//getter
+
+
+
+// Équivalent d'un getter.
 uint8_t SensorManager::getStatePIR() 
 {return inputStatePIR; }
 
 
+
+// Initialisation de la température et de l'humidité par défaut.
 void SensorManager::init()
-{
+{ 
 Temp=-1.0;
 Hum=-1.0;
 dht=new DHT(lconfig->dhtPin, DHT22);
-dht->begin();           // Initialiser le capteur DHT
-//pinMode(LED_BUILTIN, OUTPUT); // DÃ©finition de la LED d'affichage
+dht->begin(); // Initialisation du capteur DHT
+
+//pinMode(LED_BUILTIN, OUTPUT); // LED d'affichage si besoin.
+
 pinMode(lconfig->pirPin, INPUT);
 }
 
 
-// Retourne la chaine formatÃ©e de la tempÃ©rature et de l'humiditÃ©
+
+
+// Lecture des valeurs humidité et température.
+// Retourne la chaine formatée des valeurs sondées.
 void SensorManager::ReadTempHum() {
-float humidity, temp;  // Valeurs lues par la sonde
+float humidity, temp; 
   // Lecture du capteur possible toutes les deux secondes
   unsigned long currentMillis = millis();
 
-  // Si le dÃ©lai entre deux lectures ont Ã©tÃ© respectÃ©es alors on lis la tempÃ©rature
- // if (currentMillis - previousMillis >= interval) {
-   // previousMillis = currentMillis;
+   // Si le délai entre deux lectures a été respecté alors on lis. Code non-implémenté.
+   /*if (currentMillis - previousMillis >= interval) {
+        previousMillis = currentMillis;*/
 
-    humidity = dht->readHumidity(); // Lecture de l'humiditÃ© (pourcentage)
-    temp = dht->readTemperature(); // Lecture de la tempÃ©rature (Â°C)
-    // VÃ©rification de la lecture : si les valeurs humidity et temp ne sont pas nes nombres alors on retourne une erreur
+    humidity = dht->readHumidity(); // Donne un pourcentage.
+    temp = dht->readTemperature(); // Donne en degrés.
+
+    // Vérification de la lecture : si les valeurs ne sont pas des nombres alors on retourne une erreur.
     if (isnan(humidity) || isnan(temp)) {
       DEBUG_PRINTLN(F("Error reading DHT"));
     }
-    else // Sinon on formatte la chaÃ®ne Ã  retourner et Ã  afficher
+    else // Sinon on génére la chaîne formatée à afficher.
     {
        Temp=temp+lconfig->TempE;
        Hum=humidity+lconfig->HumE;
     }
 }
 
-// Retourne la chaine formatÃ©e de la tempÃ©rature et de l'humiditÃ©
+
+
+
+// Getter qui retourne la chaine formatée de la température.
 float SensorManager::getDirectTemp() {
-float temp;  // Valeurs lues par la sonde
-    temp = dht->readTemperature(); // Lecture de la tempÃ©rature (Â°C)
-    // VÃ©rification de la lecture : si les valeurs humidity et temp ne sont pas nes nombres alors on retourne une erreur
-    if (isnan(temp)) {
+float temp;  
+    temp = dht->readTemperature();
+
+    if (isnan(temp)) { // Si ce n'est pas un nombre alors erreur.
       return -1;
     }
-    else // Sinon on formatte la chaÃ®ne Ã  retourner et Ã  afficher
+    else // Retourne la chaîne formatée.
     {
       return temp;
     }
   }
 
 
-// Retourne la chaine formatÃ©e de l'humiditÃ©
+// Getter qui retourne la chaine formatée de l'humidité.
 float SensorManager::getDirectHum() {
-float humidity;  // Valeurs lues par la sonde
-    humidity = dht->readHumidity(); // Lecture de l'humiditÃ© (pourcentage)
-    // VÃ©rification de la lecture : si les valeurs humidity et temp ne sont pas nes nombres alors on retourne une erreur
-    if (isnan(humidity)) {
+float humidity; 
+    humidity = dht->readHumidity();
+    if (isnan(humidity)) { // Si ce n'est pas un nombre alors erreur.
       return -1;
     }
-    else // Sinon on formatte la chaÃ®ne Ã  retourner et Ã  afficher
+    else // Retourne la chaîne formatée.
     {
       return humidity;
     }
  }
 
 
-// Lecture du capteur de prÃ©sence
+// Lecture du capteur de présence.
 void SensorManager::readPir(uint8_t prestime)
 {
 long currentMillis = millis();
 uint8_t p;
-// Si le dÃ©lai entre la derniÃ¨re et la nouvelle lecture a Ã©tÃ© respectÃ© ou que le capteur est Ã  zero (pas de mouvement) alors on lis le capteur
-  // Le delai permets de laisser le temps au potentiel client de lire qu'un mouvement est dÃ©tectÃ© par le capteur
+  // Si le délai entre la dernière et la nouvelle lecture a été respecté ou que le capteur est à zero.
+  // Alors on lit le capteur.
+  // Le delai permet de laisser le temps de lire qu'un mouvement est détecté par le capteur.
  if (currentMillis - previousMillisPIR >= 5000 || inputStatePIR == 0) {
    
-    // Lecture du capteur
+  // Lecture du capteur
   p=digitalRead(lconfig->pirPin);
   if (lconfig->domo && inputStatePIR==1 && p==0)
     ldomo->sendPir(0);
