@@ -1,0 +1,134 @@
+MPX;Microsoft Project for Windows;4.0;ANSI
+10;;1;2;.;,
+11;2;0;1;8,00;40,00;10,00/h;15,00/h;1;0
+12;1;1;480;/;:;;;20;20
+20;Standard;1;1;1;1;1;1;1
+25;1;08:00;12:00;13:00;17:00
+25;2;08:00;12:00;13:00;17:00
+25;3;08:00;12:00;13:00;17:00
+25;4;08:00;12:00;13:00;17:00
+25;5;08:00;12:00;13:00;17:00
+25;6;08:00;12:00;13:00;17:00
+25;7;08:00;12:00;13:00;17:00
+30;Project1;;;Standard;06/11/2017;05/03/2018;0;01/12/2017;;0,00;0,00;0,00;0h;0h;0h;0%;0j;0j;0j;0%;;;;;0j;0j
+40;Nom;Adresse de messagerie;ID;ID Unique
+41;1;11;40;49
+50;Gabin Salabert;;1;1
+50;Benoît Louveau;;2;2
+50;Elouan Raffray;;3;3
+50;Yannis Mahiou;;4;4
+50;Adrien Lenoir;;5;5
+60;Nom;WBS;Niveau hiérarchique;Coût;Durée;Durée Réelle;Durée Restante;% Achevé;Début;Fin;Prédécesseurs;Fixe;Jalon;ID;Type de Contrainte;Priorité;ID Unique;Numéro Externe
+61;1;2;3;30;40;42;43;44;50;51;70;80;81;90;91;95;98;99
+70;;0;0;;120j;;;;06/11/2017;05/03/2018;;Non;;0;Dès Que Possible;;0;0
+70;Rédaction cahier des charges;1;1;0,00;7j;0j;7j;0%;06/11/2017;12/11/2017;;Non;Non;1;Dès Que Possible;Le Plus Elevé;21;1
+75;1;1;7j;;0j;;;;;06/11/2017;12/11/2017;;1
+76;;0;0;NC;NC
+75;2;1;7j;;0j;;;;;06/11/2017;12/11/2017;;2
+76;;0;0;NC;NC
+75;3;1;7j;;0j;;;;;06/11/2017;12/11/2017;;3
+76;;0;0;NC;NC
+75;4;1;7j;;0j;;;;;06/11/2017;12/11/2017;;4
+76;;0;0;NC;NC
+75;5;1;7j;;0j;;;;;06/11/2017;12/11/2017;;5
+76;;0;0;NC;NC
+70;Retouche cahier des charges;2;1;0,00;1j;0j;1j;0%;13/11/2017;13/11/2017;1;Non;Non;2;Dès Que Possible;Moyen;108;2
+75;1;1;1j;;0j;;;;;13/11/2017;13/11/2017;;1
+76;;0;0;NC;NC
+70;Analyse Application.cpp;3;1;0,00;6j;0j;6j;0%;14/11/2017;19/11/2017;2;Non;Non;3;Dès Que Possible;Moyen;2;3
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;1;1;6j;;0j;;;;;14/11/2017;19/11/2017;;1
+76;;0;0;NC;NC
+70;Analyse Web.cpp;4;1;0,00;7j;0j;7j;0%;13/11/2017;19/11/2017;1;Non;Non;4;Dès Que Possible;Moyen;6;4
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;2;1;7j;;0j;;;;;13/11/2017;19/11/2017;;2
+76;;0;0;NC;NC
+70;Analyse IRManager.cpp;5;1;0,00;7j;0j;7j;0%;13/11/2017;19/11/2017;1;Non;Non;5;Dès Que Possible;Moyen;13;5
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;4;1;7j;;0j;;;;;13/11/2017;19/11/2017;;4
+76;;0;0;NC;NC
+70;Planification du projet;6;1;0,00;7j;0j;7j;0%;13/11/2017;19/11/2017;1;Non;Non;6;Dès Que Possible;Moyen;16;6
+75;5;1;7j;;0j;;;;;13/11/2017;19/11/2017;;5
+76;;0;0;NC;NC
+70;Analyse TimeNtp.cpp;7;1;0,00;7j;0j;7j;0%;13/11/2017;19/11/2017;1;Non;Non;7;Dès Que Possible;Moyen;38;7
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;3;1;7j;;0j;;;;;13/11/2017;19/11/2017;;3
+76;;0;0;NC;NC
+70;Analyse SensorManager.cpp;8;1;0,00;7j;0j;7j;0%;20/11/2017;26/11/2017;3;Non;Non;8;Dès Que Possible;Moyen;20;8
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;1;1;7j;;0j;;;;;20/11/2017;26/11/2017;;1
+76;;0;0;NC;NC
+70;Analyse Thermostat.cpp;9;1;0,00;7j;0j;7j;0%;20/11/2017;26/11/2017;4;Non;Non;9;Dès Que Possible;Moyen;34;9
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;2;1;7j;;0j;;;;;20/11/2017;26/11/2017;;2
+76;;0;0;NC;NC
+70;Analyse DomoticzBroadcaster.cpp;10;1;0,00;7j;0j;7j;0%;20/11/2017;26/11/2017;5;Non;Non;10;Dès Que Possible;Moyen;32;10
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;4;1;7j;;0j;;;;;20/11/2017;26/11/2017;;4
+76;;0;0;NC;NC
+70;Analyse WifiManager.cpp;11;1;0,00;7j;0j;7j;0%;20/11/2017;26/11/2017;6;Non;Non;11;Dès Que Possible;Moyen;42;11
+71;Acceptabilité de la tâche :=> Compte-rendu en .pdf/.docxEtapes :- Documenter le code de chaque fonction et globalement de la classe- Dégager le bout de diagramme de classe relatif à la classe- Dégager un/plusieurs patrons de conception - Conclusion sur un/des défauts de conception (patrons abîmés ?)
+75;5;1;7j;;0j;;;;;20/11/2017;26/11/2017;;5
+76;;0;0;NC;NC
+70;"Diagramme activité ""Se connecter""";12;1;0,00;7j;0j;7j;0%;20/11/2017;26/11/2017;7;Non;Non;12;Dès Que Possible;Moyen;43;12
+75;3;1;7j;;0j;;;;;20/11/2017;26/11/2017;;3
+76;;0;0;NC;NC
+70;Finalisation du rapport sur l'étude du code existant;13;1;0,00;2j;0j;2j;0%;27/11/2017;28/11/2017;"8;10;9;11;12";Non;Non;13;Dès Que Possible;Moyen;74;13
+75;1;1;2j;;0j;;;;;27/11/2017;28/11/2017;;1
+76;;0;0;NC;NC
+75;2;1;2j;;0j;;;;;27/11/2017;28/11/2017;;2
+76;;0;0;NC;NC
+75;3;1;2j;;0j;;;;;27/11/2017;28/11/2017;;3
+76;;0;0;NC;NC
+75;5;1;2j;;0j;;;;;27/11/2017;28/11/2017;;5
+76;;0;0;NC;NC
+70;Analyse de patrons de conception;14;1;0,00;90j;0j;90j;0%;29/11/2017;26/02/2018;13;Non;Non;14;Dès Que Possible;Moyen;53;14
+75;1;1;90j;;0j;;;;;29/11/2017;26/02/2018;;1
+76;;0;0;NC;NC
+70;Implémentation de patrons de conception;15;1;0,00;90j;0j;90j;0%;29/11/2017;26/02/2018;13;Non;Non;15;Dès Que Possible;Moyen;79;15
+75;1;1;90j;;0j;;;;;29/11/2017;26/02/2018;;1
+76;;0;0;NC;NC
+70;Utilisation d'outils de Pen Testing (Ex : John The Ripper ...);16;1;0,00;14j;0j;14j;0%;29/11/2017;12/12/2017;13;Non;Non;16;Dès Que Possible;Moyen;65;16
+75;2;1;14j;;0j;;;;;29/11/2017;12/12/2017;;2
+76;;0;0;NC;NC
+70;Analyse de patrons de sécurité;17;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;16;Non;Non;17;Dès Que Possible;Moyen;78;17
+75;2;1;76j;;0j;;;;;13/12/2017;26/02/2018;;2
+76;;0;0;NC;NC
+70;Implémentation de patrons de sécurité;18;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;16;Non;Non;18;Dès Que Possible;Moyen;87;18
+75;2;1;76j;;0j;;;;;13/12/2017;26/02/2018;;2
+76;;0;0;NC;NC
+70;Analyse de patrons de conception;19;1;0,00;90j;0j;90j;0%;29/11/2017;26/02/2018;13;Non;Non;19;Dès Que Possible;Moyen;56;19
+75;4;1;90j;;0j;;;;;29/11/2017;26/02/2018;;4
+76;;0;0;NC;NC
+70;Implémentation de patrons de conception;20;1;0,00;90j;0j;90j;0%;29/11/2017;26/02/2018;13;Non;Non;20;Dès Que Possible;Moyen;90;20
+75;4;1;90j;;0j;;;;;29/11/2017;26/02/2018;;4
+76;;0;0;NC;NC
+70;Utilisation d'outils de Pen Testing (Ex : Zaproxy ...);21;1;0,00;14j;0j;14j;0%;29/11/2017;12/12/2017;13;Non;Non;21;Dès Que Possible;Moyen;63;21
+75;5;1;14j;;0j;;;;;29/11/2017;12/12/2017;;5
+76;;0;0;NC;NC
+70;Analyse de patrons de sécurité;22;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;21;Non;Non;22;Dès Que Possible;Moyen;94;22
+75;5;1;76j;;0j;;;;;13/12/2017;26/02/2018;;5
+76;;0;0;NC;NC
+70;Implémentation de patrons de sécurité;23;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;21;Non;Non;23;Dès Que Possible;Moyen;101;23
+75;5;1;76j;;0j;;;;;13/12/2017;26/02/2018;;5
+76;;0;0;NC;NC
+70;Utilisation d'outils de Pen Testing (Ex : Hardsploit ...);24;1;0,00;14j;0j;14j;0%;29/11/2017;12/12/2017;13;Non;Non;24;Dès Que Possible;Moyen;69;24
+75;3;1;14j;;0j;;;;;29/11/2017;12/12/2017;;3
+76;;0;0;NC;NC
+70;Analyse de patrons de sécurité;25;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;24;Non;Non;25;Dès Que Possible;Moyen;98;25
+75;3;1;76j;;0j;;;;;13/12/2017;26/02/2018;;3
+76;;0;0;NC;NC
+70;Implémentation de patrons de sécurité;26;1;0,00;76j;0j;76j;0%;13/12/2017;26/02/2018;24;Non;Non;26;Dès Que Possible;Moyen;104;26
+75;3;1;76j;;0j;;;;;13/12/2017;26/02/2018;;3
+76;;0;0;NC;NC
+70;Finalisation du projet;27;1;0,00;7j;0j;7j;0%;27/02/2018;05/03/2018;"14;19;17;15;18;20;22;25;23;26";Non;Non;27;Dès Que Possible;Moyen;107;27
+75;1;1;7j;;0j;;;;;27/02/2018;05/03/2018;;1
+76;;0;0;NC;NC
+75;2;1;7j;;0j;;;;;27/02/2018;05/03/2018;;2
+76;;0;0;NC;NC
+75;3;1;7j;;0j;;;;;27/02/2018;05/03/2018;;3
+76;;0;0;NC;NC
+75;4;1;7j;;0j;;;;;27/02/2018;05/03/2018;;4
+76;;0;0;NC;NC
+75;5;1;7j;;0j;;;;;27/02/2018;05/03/2018;;5
+76;;0;0;NC;NC
