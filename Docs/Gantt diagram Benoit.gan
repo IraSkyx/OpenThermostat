@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="OpenThermostat" company="" webLink="http://" view-date="2017-10-23" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="fr">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="163" order="0"/>
+        <field id="tpd4" name="Date de début" width="67" order="1"/>
+        <field id="tpd5" name="Date de fin" width="66" order="2"/>
+        <option id="taskLabelUp" value="name"/>
+        <option id="taskLabelDown" value="resources"/>
+        <timeline><![CDATA[21]]></timeline>
+        <option id="color.recent"><![CDATA[#9999ff #e1e1e1 #333333 #cccccc #00cc66 #ff3333 #ffcc66]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="Aucun">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="1" tue="1" wed="1" thu="1" fri="1" sat="1"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="11" date="13" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="11" date="20" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="11" date="27" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="4" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="11" date="6" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="11" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="18" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="12" date="25" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="1" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="8" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="15" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="22" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="1" date="29" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="5" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="12" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="19" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="2" date="26" type="WORKING_DAY" color="#9999ff"><![CDATA[Réunion Mr.Salva]]></date>
+        <date year="" month="3" date="5" type="WORKING_DAY" color="#9999ff"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="21" name="Rédaction cahier des charges" color="#333333" meeting="false" start="2017-11-06" duration="7" complete="0" priority="4" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="Analyse Web.cpp" color="#ffcc66" meeting="false" start="2017-11-13" duration="7" complete="0" expand="true">
+            <notes><![CDATA[Acceptabilité de la tâche :
+=> Compte-rendu en .pdf/.docx
+
+Etapes :
+- Documenter le code de chaque fonction et globalement de la classe
+- Dégager le bout de diagramme de classe relatif à la classe
+- Dégager un/plusieurs patrons de conception 
+- Conclusion sur un/des défauts de conception (patrons abîmés ?)]]></notes>
+            <depend id="34" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="34" name="Analyse Thermostat.cpp" color="#ffcc66" meeting="false" start="2017-11-20" duration="7" complete="0" expand="true">
+            <notes><![CDATA[Acceptabilité de la tâche :
+=> Compte-rendu en .pdf/.docx
+
+Etapes :
+- Documenter le code de chaque fonction et globalement de la classe
+- Dégager le bout de diagramme de classe relatif à la classe
+- Dégager un/plusieurs patrons de conception 
+- Conclusion sur un/des défauts de conception (patrons abîmés ?)]]></notes>
+            <depend id="74" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="74" name="Finalisation du rapport sur l'étude du code existant" color="#8cb6ce" meeting="false" start="2017-11-27" duration="2" complete="0" expand="true">
+            <depend id="65" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="65" name="Utilisation d'outils de Pen Testing (Ex : John The Ripper ...)" color="#ffcc66" meeting="false" start="2017-11-29" duration="14" complete="0" expand="true">
+            <depend id="78" type="2" difference="0" hardness="Strong"/>
+            <depend id="87" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="78" name="Analyse de patrons de sécurité" color="#ffcc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="87" name="Implémentation de patrons de sécurité" color="#ffcc66" meeting="false" start="2017-12-13" duration="76" complete="0" expand="true">
+            <depend id="107" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="107" name="Finalisation du projet" color="#333333" meeting="false" start="2018-02-27" duration="7" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Gabin Salabert" function="2" contacts="" phone=""/>
+        <resource id="1" name="Benoît Louveau" function="1" contacts="" phone=""/>
+        <resource id="2" name="Elouan Raffray" function="1" contacts="" phone=""/>
+        <resource id="3" name="Yannis Mahiou" function="2" contacts="" phone=""/>
+        <resource id="4" name="Adrien Lenoir" function="1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="21" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="74" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="21" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="34" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="65" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="74" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="78" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="87" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="107" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="2" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="107" resource-id="2" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="107" resource-id="3" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="3" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="4" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="107" resource-id="4" function="1" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Equipe sécurité"/>
+        <role id="2" name="Equipe analyse conception"/>
+    </roles>
+</project>
