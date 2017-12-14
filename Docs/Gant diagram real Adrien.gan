@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="OpenThermostat" company="" webLink="http://" view-date="2017-09-18" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="OpenThermostat" company="" webLink="http://" view-date="2017-10-23" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="fr">
     <description/>
-    <view zooming-state="default:7" id="gantt-chart">
+    <view zooming-state="default:5" id="gantt-chart">
         <field id="tpd3" name="Nom" width="163" order="0"/>
         <field id="tpd4" name="Date de début" width="67" order="1"/>
         <field id="tpd5" name="Date de fin" width="66" order="2"/>
@@ -8,7 +8,7 @@
         <option id="taskLabelDown" value="resources"/>
         <option id="taskLabelLeft" value=""/>
         <timeline><![CDATA[21]]></timeline>
-        <option id="color.recent"><![CDATA[#9999ff #e1e1e1 #333333 #cccccc #00cc66 #ff3333 #ffcc66]]></option>
+        <option id="color.recent"><![CDATA[#00cc66 #333333 #f4f4f4 #9999ff #e1e1e1 #cccccc #ff3333 #ffcc66]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -56,13 +56,22 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="21" name="Rédaction cahier des charges" color="#333333" meeting="false" start="2017-11-06" duration="7" complete="0" priority="4" expand="true">
+        <task id="75" name="Mise en place du Repository GitHub" color="#00cc66" meeting="false" start="2017-11-06" duration="1" complete="0" expand="true">
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" name="Rédaction cahier des charges" color="#333333" meeting="false" start="2017-11-07" duration="5" complete="0" priority="4" expand="true">
+            <depend id="87" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="87" name="Peaufinage du cahier des charges" color="#00cc66" meeting="false" start="2017-11-12" duration="1" complete="0" expand="true">
             <depend id="16" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="16" name="Planification du projet" color="#00cc66" meeting="false" start="2017-11-13" duration="7" complete="0" expand="true">
+            <depend id="134" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="134" name="Peaufinage de la planification" color="#00cc66" meeting="false" start="2017-11-20" duration="1" complete="0" expand="true">
             <depend id="42" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="42" name="Analyse WifiManager.cpp" color="#00cc66" meeting="false" start="2017-11-20" duration="7" complete="0" expand="true">
+        <task id="42" name="Analyse WifiManager.cpp" color="#00cc66" meeting="false" start="2017-11-21" duration="6" complete="0" expand="true">
             <notes><![CDATA[Acceptabilité de la tâche :
 => Compte-rendu en .pdf/.docx
 
@@ -73,10 +82,16 @@ Etapes :
 - Conclusion sur un/des défauts de conception (patrons abîmés ?)]]></notes>
             <depend id="74" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="74" name="Finalisation du rapport sur l'étude du code existant" color="#8cb6ce" meeting="false" start="2017-11-27" duration="2" complete="0" expand="true">
+        <task id="74" name="Finalisation du rapport d’analyse" color="#333333" meeting="false" start="2017-11-27" duration="2" complete="0" expand="true">
             <depend id="63" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="63" name="Utilisation d'outils de Pen Testing (Ex : Zaproxy ...)" color="#00cc66" meeting="false" start="2017-11-29" duration="14" complete="0" expand="true"/>
+        <task id="63" name="Utilisation et recherches d’outils de PenTesting" color="#00cc66" meeting="false" start="2017-11-29" duration="4" complete="0" expand="true">
+            <depend id="139" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="139" name="Plannings prévisionnels individuels" color="#00cc66" meeting="false" start="2017-12-03" duration="1" complete="0" expand="true">
+            <depend id="147" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="147" name="Utilisation de Airmon-ng/Airodump-ng/AirCrack-ng" color="#00cc66" meeting="false" start="2017-12-04" duration="7" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Gabin Salabert" function="2" contacts="" phone=""/>
@@ -99,6 +114,10 @@ Etapes :
         <allocation task-id="42" resource-id="4" function="1" responsible="true" load="100.0"/>
         <allocation task-id="63" resource-id="4" function="1" responsible="true" load="100.0"/>
         <allocation task-id="74" resource-id="4" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="87" resource-id="4" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="75" resource-id="4" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="134" resource-id="4" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="139" resource-id="4" function="1" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
