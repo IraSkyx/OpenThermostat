@@ -3,13 +3,12 @@
 
 class InputGuard
 {
-private:
-	static void clearTags(String &s)
+//private:
+//	static void clearTags(String &s)
 
 public:
-	static bool alpha(String &s);
-	static bool num(String &s);
-	static bool alphaNum(String &s);
+	static bool matchWebSpecs(String &s);
+	static bool matchNTPSpecs(String &s);
 }
 
 #endif
