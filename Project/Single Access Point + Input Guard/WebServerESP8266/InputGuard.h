@@ -5,16 +5,18 @@
 #include <string>
 #include "InputSpecs.h"
 
+using namespace std;
+
 class InputGuard
 {
 public:
-	static bool matchAlpha(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getAlpha())); } 
-	static bool matchNum(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getNum())); }
-	static bool matchAlphaNum(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getAlphaNum())); }
-	static bool matchPort(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getPort())); }
-	static bool matchEmail(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getEmail())); }
-	static bool matchHhmm(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getHhmm())); }
-	static bool matchHhmmss(std::string s) { return std::regex_match(s, std::regex(InputSpecs::getHhmmss())); }
+	static bool matchAlpha(string s) { return regex_match(s, regex(InputSpecs::getAlpha())); } 
+	static bool matchNum(string s) { return regex_match(s, regex(InputSpecs::getNum())); }
+	static bool matchAlphaNum(string s) { return regex_match(s, regex(InputSpecs::getAlphaNum())); }
+	static bool matchPort(string s) { return regex_match(s, regex(InputSpecs::getPort())); }
+	static bool matchEmail(string s) { return regex_match(s, regex(InputSpecs::getEmail())); }
+	static bool matchHhmm(string s) { return regex_match(s, regex(InputSpecs::getHhmm())); }
+	static bool matchHhmmss(string s) { return regex_match(s, regex(InputSpecs::getHhmmss())); }
 };
 
 #endif

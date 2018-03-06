@@ -1,5 +1,5 @@
 #include "Web.h"
-
+#include "WebAccess.h"
 
 Web::Web(SensorManager *s, Thermostat * t, WifiManager * lw, IRManager *ir, TimeNtp * ti, DomoticzBroadcaster *dom) :
 	server(80)
@@ -22,6 +22,7 @@ void Web::init()
 	//error: 'this' was not captured for this lambda function : For the fix, just add the reference capture and it will compile fine
 	server.on("/tempandhumidity", [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		String r = "";
 		r = String(lsensor->getTemp(), 2) + ";" + String(lsensor->getHum(), 2);
 		server.send(200, "text/plain", r);
@@ -30,6 +31,7 @@ void Web::init()
 	// reboot
 	server.on("/reboot", HTTP_GET, [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		server.send(200, "text/html", F("<html><head><meta http-equiv=\"refresh\" content=\"5;URL=/\"></head><body>Rebooting in 5s</body></html>"));
 		Application::getInstance().Cmd = CMD_REBOOT;
 	});
@@ -42,6 +44,7 @@ void Web::init()
 	// RequÃªte du statut du capteur de prÃ©sence (/presence)
 	server.on("/presence", [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		server.send(200, "text.plain", String(lsensor->getStatePIR()));
 	});
 
@@ -50,6 +53,7 @@ void Web::init()
 
 	server.on("/on", [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		Application::getInstance().Mode = F("Eco");
 		lthermos->on();
 		server.send(200, "text.plain", "Thermostat ON");
@@ -57,6 +61,7 @@ void Web::init()
 
 	server.on("/off", [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		lthermos->off();
 		server.send(200, "text.plain", "Thermostat OFF");
 	});
@@ -71,6 +76,7 @@ void Web::init()
 	// Log page
 	server.on("/log", HTTP_GET, [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		String r = "";
 		formlog(r);
 		server.send(200, "text/html", r);
@@ -79,6 +85,7 @@ void Web::init()
 	// config page
 	server.on("/config", HTTP_GET, [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		String r = "";
 		String e = "";
 		formconfig(lthermos, r, e);
@@ -97,6 +104,7 @@ void Web::init()
 	// Initialiser la page de config planning
 	server.on("/planning", HTTP_GET, [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		String r = "";
 		String e = "";
 		formplanning(lthermos, r, e);
@@ -107,6 +115,7 @@ void Web::init()
 	//Dombroadcaster
 	server.on("/Dombroadcaster", HTTP_GET, [&]()
 	{
+		if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 		String r = ""; String e = "";
 		formdomo(r, e);
 		server.send(200, "text/html", r);
@@ -134,6 +143,7 @@ void Web::init()
 // root page
 void Web::handle_root()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	bool b = false;
 	String userVal = "";
 
@@ -162,6 +172,7 @@ void Web::handle_root()
 // sensor page
 void Web::sensor_print()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String str = "";
 	sensor(lsensor, str);
 	server.send(200, "text/html", str);
@@ -170,6 +181,7 @@ void Web::sensor_print()
 
 void Web::sendir()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String hpmodel = server.arg("model");
 	String power = server.arg("pwr");
 	String fmode = server.arg("mode");
@@ -186,6 +198,7 @@ void Web::sendir()
 
 void Web::modee()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String result = "";
 	String mode = server.arg("mode");
 	//String modele = server.arg("model");
@@ -246,6 +259,7 @@ void Web::modee()
 // Quand l'utilisateur fait appel au service /wificredentials
 void Web::wifiCredentials()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String nssid = server.arg("ssid");
 	String npwd = server.arg("pwd");
 	if (nssid != "") // Si l'utilisateur saisit des valeurs dans l'URL on modifie la connexion Wifi
@@ -275,6 +289,7 @@ void Web::wifiCredentials()
 // Quand l'utilisateur fait appel au service /calibrateTemp
 void Web::calibrateT()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String userVal = server.arg("value");
 
 	if (userVal != "") // Si l'utilisateur Ã  saisit une valeur alors on Ã©crit dans la mÃ©moire cette valeur
@@ -293,6 +308,7 @@ void Web::calibrateT()
 // Quand l'utilisateur fait appel au service /calibrateHum
 void Web::calibrateH()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String userVal = server.arg("value");
 	if (userVal != "") // Si l'utilisateur Ã  saisit une valeur alors on Ã©crit dans la mÃ©moire cette valeur
 	{
@@ -309,6 +325,7 @@ void Web::calibrateH()
 
 void Web::saveconfig()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	bool b = false;
 	String userVal = "";
 
@@ -503,6 +520,7 @@ void Web::saveconfig()
 
 void Web::delplanning()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	String userVal = "";
 
 	userVal = server.arg("p");
@@ -526,6 +544,7 @@ void Web::delplanning()
 //called by form planning
 void Web::saveplanning()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	bool b = false;
 	String userVal = "";
 	String cmd = "";
@@ -605,6 +624,7 @@ void Web::saveplanning()
 
 void Web::savedomo()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	bool b = false;
 	String userVal = "";
 
@@ -655,6 +675,7 @@ void Web::savedomo()
 
 void Web::logging()
 {
+	if (!WebAccess::authorize(server, Protocol::ALPHA)) return;
 	bool b = false;
 	String userVal = "";
 
