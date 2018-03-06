@@ -7,13 +7,12 @@
 
 class DomoticzBroadcaster
 {
-  public:
-  DomoticzBroadcaster();
-  void sendPir(uint8_t state);
-  void sendTemp(float t);
-  void sendMode(String mode);
-  float getTemp();
-
+public:
+	DomoticzBroadcaster();
+	void sendPir(uint8_t state);
+	void sendTemp(float t);
+	void sendMode(String mode);
+	float getTemp();
 };
 
 #endif

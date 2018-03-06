@@ -1,10 +1,20 @@
-﻿#include <vector>
+﻿#ifndef CARETAKER_H
+#define CARETAKER_H
 
-using namespace std;
+#include "Memento.h"
+
+/**
+ * Responsible for the preservation of the Memento, not on the memo content operation or inspection
+ */
 class CareTaker
 {
-	void add(Memento state) { mementoList.push_back(state); }
-	Memento get(int index) { return mementoList[index];  }
+public:
+	CareTaker(){}
+	~CareTaker() {}
+	void setMemento(Memento* memento);
+	Memento* getMemento() { return this->memento; }
 private:
-	vector<Memento> mementoList;
+	Memento* memento;
 };
+
+#endif

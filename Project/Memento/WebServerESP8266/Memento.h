@@ -10,17 +10,11 @@ private:
 	 */
 	friend class Application;
 
-	/**
-	 * All the ways to create Memento are private
-	 * 
-	 */
-	Memento(const Application &app) { this->m_state = app.m_state; };
+	String m_state;
+	Memento(const String& state);
 	~Memento() = delete;
-	Memento &operator=(const Memento &src) { m_state = src.m_state; return *this; }
-	Application m_state;
-	Application getState() const { return m_state; }
-	void setState(Application app) { this->m_state = app; }
-	
+	String getState() const;
+	void setState(const String& state);
 };
 
 #endif

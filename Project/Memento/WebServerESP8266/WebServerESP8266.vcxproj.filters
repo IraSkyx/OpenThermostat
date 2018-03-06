@@ -48,11 +48,14 @@
     <ClInclude Include="WifiManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CareTaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Memento.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CareTaker.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="sha512.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,10 +86,10 @@
     <ClCompile Include="WifiManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Memento.cpp">
+    <ClCompile Include="CareTaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CareTaker.cpp">
+    <ClCompile Include="Memento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
