@@ -1,5 +1,0 @@
-DHT
-TimeAlarms
-Time
-Adafruit_sensor (unified sensor)
-heatpumpIr

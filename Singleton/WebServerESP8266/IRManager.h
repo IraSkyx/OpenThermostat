@@ -23,16 +23,15 @@
 class IRManager
 {
 private:
-    IRSender *irSender;
-    unsigned int HPState=0;
-    float HPTemp=0;
+	IRSender *irSender;
+	unsigned int HPState = 0;
+	float HPTemp = 0;
 public:
-    uint8_t  getHPState() {return HPState;};
-    uint8_t getHPTemp() {return HPTemp;};
-    IRManager();
-    IRManager();
-    uint8_t sendIR(String hpmodel, String power, String fmode, String fan, String temp, String vair, String hair);
-    void init();
+	uint8_t  getHPState() { return HPState; };
+	uint8_t getHPTemp() { return HPTemp; };
+	IRManager();
+	uint8_t sendIR(String hpmodel, String power, String fmode, String fan, String temp, String vair, String hair);
+	void init();
 };
 
 #endif
