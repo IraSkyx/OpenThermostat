@@ -19,9 +19,9 @@ enum class Protocol {
 
 static class WebAccess
 {
-	static const vector<function<bool(string)>> v_function;
+	static const vector<function<bool(String)>> v_function;
 
-	static bool validate(ESP8266WebServer& server, function<bool(string)> func)
+	static bool validate(ESP8266WebServer& server, function<bool(String)> func)
 	{
 		bool res = true;
 		for (int i = 0; i < server.args(); ++i)

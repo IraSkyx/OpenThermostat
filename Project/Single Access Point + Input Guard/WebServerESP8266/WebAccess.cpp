@@ -3,7 +3,7 @@
 #include <ESP8266WebServer.h>
 #include <functional>
 
-static const vector<function<bool(string)>> v_function = {
+static const vector<function<bool(String)>> v_function = {
 	(*InputGuard::matchAlpha),
 	(*InputGuard::matchNum),
 	(*InputGuard::matchAlphaNum),

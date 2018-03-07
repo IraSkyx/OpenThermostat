@@ -10,13 +10,13 @@ using namespace std;
 class InputGuard
 {
 public:
-	static bool matchAlpha(string s) { return regex_match(s, regex(InputSpecs::getAlpha())); } 
-	static bool matchNum(string s) { return regex_match(s, regex(InputSpecs::getNum())); }
-	static bool matchAlphaNum(string s) { return regex_match(s, regex(InputSpecs::getAlphaNum())); }
-	static bool matchPort(string s) { return regex_match(s, regex(InputSpecs::getPort())); }
-	static bool matchEmail(string s) { return regex_match(s, regex(InputSpecs::getEmail())); }
-	static bool matchHhmm(string s) { return regex_match(s, regex(InputSpecs::getHhmm())); }
-	static bool matchHhmmss(string s) { return regex_match(s, regex(InputSpecs::getHhmmss())); }
+	static bool matchAlpha(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getAlpha())); }
+	static bool matchNum(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getNum())); }
+	static bool matchAlphaNum(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getAlphaNum())); }
+	static bool matchPort(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getPort())); }
+	static bool matchEmail(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getEmail())); }
+	static bool matchHhmm(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getHhmm())); }
+	static bool matchHhmmss(String s) { return regex_match(string(s.toCharArray), regex(InputSpecs::getHhmmss())); }
 };
 
 #endif
