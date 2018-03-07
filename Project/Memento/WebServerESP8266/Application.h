@@ -19,7 +19,6 @@
 #include "Memento.h"
 #include "CareTaker.h"
 
-
 class Application
 {
 private:
@@ -91,7 +90,6 @@ public:
 	void setMemento(Memento* memento);
 	String getState() { return m_state; };
 	void setState(const String& state) { m_state = state; }
-
 };
 
 #endif

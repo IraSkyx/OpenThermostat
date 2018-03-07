@@ -1,5 +1,6 @@
 ﻿#ifndef MEMENTO_H
 #define MEMENTO_H
+#include <WString.h>
 
 class Memento
 {

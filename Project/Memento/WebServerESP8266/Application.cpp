@@ -1,10 +1,7 @@
 #include "Application.h"
 #include <Time.h>
-#include "sha512.h"
 #include "CareTaker.h"
-#include <string>
 
-using namespace std;
 
 // constructeur
 Application::Application()
@@ -106,14 +103,15 @@ void Application::load()
 
 	// Memento who restor the old state
 	String chaineFormatee = String(TempE, 1) + ";" + String(HumE, 1) + ";" + Wssid + ";" + Wpass + ";" + dhtType + ";" + dhtPin + ";" + pirPin + ";" + irPin + ";" + AP + ";" + Ntp + ";" + String(Timezone) + ";" + Ip + ";" + Gat + ";" + Dns + ";" + Mode + ";" + String(Temp, 1) + ";" + String(FTemp, 1) + ";" + pwd + ";" + String(domo) + ";" + domoIP + ";" + String(domoPir) + ";" + String(domoTemp) + ";" + String(domoMode) + ";" + String(domogTemp) + ";";
-	Application::getInstance().setMemento(taker->getMemento());
+	Application::getInstance().createMemento();
+	taker->getMemento()->setState(chaineFormatee);
 }
 
 // Sauvegarde les données actuelles dans un nouveau fichier qui remplace le précédent.
 void Application::save()
 {
-	String chaineFormatee = String(TempE, 1) + ";" + String(HumE, 1) + ";" + Wssid + ";" + Wpass + ";" + dhtType + ";" + dhtPin + ";" + pirPin + ";" + irPin + ";" + AP + ";" + Ntp + ";" + String(Timezone) + ";" + Ip + ";" + Gat + ";" + Dns + ";" + Mode + ";" + String(Temp, 1) + ";" + String(FTemp, 1) + ";" + pwd + ";" + String(domo) + ";" + domoIP + ";" + String(domoPir) + ";" + String(domoTemp) + ";" + String(domoMode) + ";" + String(domogTemp) + ";";
-	Application::getInstance().setState(chaineFormatee);
+	String chaineFormatee = Application::getInstance().getState();
+	Application::getInstance().setMemento(taker->getMemento());
 
 	Serial.println("Save config : " + chaineFormatee);
 	DEBUG_PRINTLN("Save config : " + chaineFormatee);
@@ -124,7 +122,6 @@ void Application::save()
 	f.close();
 	SPIFFS.end();
 }
-
 
 
 void Application::AddLog(String s)

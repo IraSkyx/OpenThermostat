@@ -1,6 +1,6 @@
 #ifndef SHA512_H
 #define SHA512_H
-
+#include <WString.h>
 
 /**
  * converted string into String
