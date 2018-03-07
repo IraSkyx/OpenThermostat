@@ -4558,7 +4558,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+formconfig(Application *c, Thermostat *t, String &str, String &error)",
+											"text": "+formconfig(Thermostat *t, String &str, String &error)",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -21154,11 +21154,10 @@
 									"_parent": {
 										"$ref": "AAAAAAFgIU9h6F2wxOk="
 									},
-									"name": "Application *c",
+									"name": "Thermostat *t",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -21170,11 +21169,10 @@
 									"_parent": {
 										"$ref": "AAAAAAFgIU9h6F2wxOk="
 									},
-									"name": "Thermostat *t",
+									"name": "String &str",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -21186,27 +21184,10 @@
 									"_parent": {
 										"$ref": "AAAAAAFgIU9h6F2wxOk="
 									},
-									"name": "String &str",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFgIU+5YGShiYQ=",
-									"_parent": {
-										"$ref": "AAAAAAFgIU9h6F2wxOk="
-									},
 									"name": "String &error",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -21529,6 +21510,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
