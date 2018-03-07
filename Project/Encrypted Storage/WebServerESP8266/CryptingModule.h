@@ -1,6 +1,7 @@
-#pragma once
+#ifndef CRYPTINGMODULE_H
+#define CRYPTINGMODULE_H
+#include <WString.h>
 
-#include <string>
 class CryptingModule
 {
 public:
@@ -8,4 +9,4 @@ public:
 	static String decrypt(String s);
 
 };
-
+#endif
